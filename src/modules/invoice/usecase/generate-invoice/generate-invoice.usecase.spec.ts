@@ -17,12 +17,7 @@ describe('Generate Invoice Usecase Unit test', () => {
       id: '1',
       name: 'Client 1',
       document: '12345678901',
-      street: 'Street 1',
-      number: 'Number 1',
-      complement: 'Complement 1',
-      city: 'City 1',
-      state: 'State 1',
-      zipCode: 'Zip Code 1',
+      address: 'Rua Test',
       items: [
         {
             id: "1",
@@ -40,12 +35,7 @@ describe('Generate Invoice Usecase Unit test', () => {
     expect(result.id).toBeDefined();
     expect(result.name).toEqual(input.name);
     expect(result.document).toEqual(input.document);
-    expect(result.street).toEqual(input.street);
-    expect(result.number).toEqual(input.number);
-    expect(result.complement).toEqual(input.complement);
-    expect(result.city).toEqual(input.city);
-    expect(result.state).toEqual(input.state);
-    expect(result.zipCode).toEqual(input.zipCode);
+    expect(result.address).toEqual(input.address);
     expect(result.items).toEqual(input.items);
   })
 })

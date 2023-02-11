@@ -4,7 +4,6 @@ import { ProductModel } from './product.model';
 import { Invoice } from '../domain/invoice.entity';
 import Product from '../domain/product.entity';
 import Id from '../../@shared/domain/value-object/id.value-object';
-import { Address } from '../domain/address.value-object';
 import InvoiceRepository from './invoice.repository';
 
 describe('Invoice Repository test', () => {
@@ -37,14 +36,7 @@ describe('Invoice Repository test', () => {
         id: new Id("1"),
         name: "Invoice 1",
         document: "Invoice document",
-        address: new Address({
-          city: "City 1",
-          state: "State 1",
-          street: "Street 1",
-          number: "1",
-          complement: "Complement 1",
-          zipCode: "Zip Code 1",
-        }),
+        address: "Rua Test",
         items: [ product ],
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -61,12 +53,7 @@ describe('Invoice Repository test', () => {
     expect(invoice.id.id).toEqual(invoiceDb.id);
     expect(invoice.name).toEqual(invoiceDb.name);
     expect(invoice.document).toEqual(invoiceDb.document);
-    expect(invoice.address.city).toEqual(invoiceDb.city);
-    expect(invoice.address.state).toEqual(invoiceDb.state);
-    expect(invoice.address.street).toEqual(invoiceDb.street);
-    expect(invoice.address.number).toEqual(invoiceDb.number);
-    expect(invoice.address.complement).toEqual(invoiceDb.complement);
-    expect(invoice.address.zipCode).toEqual(invoiceDb.zipCode);
+    expect(invoice.address).toEqual(invoiceDb.address);
     expect(invoice.items[0].id.id).toEqual(invoiceDb.products[0].id);
     expect(invoice.items[0].name).toEqual(invoiceDb.products[0].name);
     expect(invoice.items[0].price).toEqual(invoiceDb.products[0].price);
@@ -85,14 +72,7 @@ describe('Invoice Repository test', () => {
         id: new Id("1"),
         name: "Invoice 1",
         document: "Invoice document",
-        address: new Address({
-          city: "City 1",
-          state: "State 1",
-          street: "Street 1",
-          number: "1",
-          complement: "Complement 1",
-          zipCode: "Zip Code 1",
-        }),
+        address: "Rua Test",
         items: [ product ],
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -106,12 +86,7 @@ describe('Invoice Repository test', () => {
     expect(invoice.id.id).toEqual(invoiceDb.id.id);
     expect(invoice.name).toEqual(invoiceDb.name);
     expect(invoice.document).toEqual(invoiceDb.document);
-    expect(invoice.address.city).toEqual(invoiceDb.address.city);
-    expect(invoice.address.state).toEqual(invoiceDb.address.state);
-    expect(invoice.address.street).toEqual(invoiceDb.address.street);
-    expect(invoice.address.number).toEqual(invoiceDb.address.number);
-    expect(invoice.address.complement).toEqual(invoiceDb.address.complement);
-    expect(invoice.address.zipCode).toEqual(invoiceDb.address.zipCode);
+    expect(invoice.address).toEqual(invoiceDb.address);
     expect(invoice.items[0].id.id).toEqual(invoiceDb.items[0].id.id);
     expect(invoice.items[0].name).toEqual(invoiceDb.items[0].name);
     expect(invoice.items[0].price).toEqual(invoiceDb.items[0].price);

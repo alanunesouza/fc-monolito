@@ -1,12 +1,7 @@
 export interface GenerateInvoiceUseCaseInputDto {
   name: string;
   document: string;
-  street: string;
-  number: string;
-  complement: string;
-  city: string;
-  state: string;
-  zipCode: string;
+  address: string;
   items: {
     id: string;
     name: string;
@@ -20,12 +15,7 @@ export interface GenerateInvoiceUseCaseOutputDto {
   id: string;
   name: string;
   document: string;
-  street: string;
-  number: string;
-  complement: string;
-  city: string;
-  state: string;
-  zipCode: string;
+  address: string;
   items: {
     id: string;
     name: string;

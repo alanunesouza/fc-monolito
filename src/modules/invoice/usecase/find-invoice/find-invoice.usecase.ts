@@ -11,12 +11,7 @@ export default class FindInvoiceUseCase {
       id: invoice.id.id,
       name: invoice.name,
       document: invoice.document,
-      city: invoice.address.city,
-      state: invoice.address.state,
-      street: invoice.address.street,
-      number: invoice.address.number,
-      complement: invoice.address.complement,
-      zipCode: invoice.address.zipCode,
+      address: invoice.address,
       items: invoice.items.map(item => {
         return {
           id: item.id.id,

@@ -1,12 +1,11 @@
-import { Column, HasMany, Model, PrimaryKey, Table } from "sequelize-typescript";
-import { ProductModel } from "./product.model";
+import { Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { OrderModel } from "./order.model";
 
 @Table({
-  tableName: "invoices",
+  tableName: "clients",
   timestamps: false,
 })
-export class InvoiceModel extends Model {
-  
+export class ClientModel extends Model {
   @PrimaryKey
   @Column({ allowNull: false })
   id: string;
@@ -15,18 +14,22 @@ export class InvoiceModel extends Model {
   name: string;
 
   @Column({ allowNull: false })
+  email: string;
+
+  @Column({ allowNull: false })
   document: string;
 
   @Column({ allowNull: false })
   address: string;
-
-  @HasMany(() => ProductModel)
-  products: ProductModel[]
 
   @Column({ allowNull: false })
   createdAt: Date;
 
   @Column({ allowNull: false })
   updatedAt: Date;
-  
+
+  @ForeignKey(() => OrderModel)
+  @Column({ allowNull: true })
+  orderId: string;
+
 }

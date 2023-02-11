@@ -28,6 +28,7 @@ describe("ClientRepository test", () => {
       id: new Id("1"),
       name: "Client 1",
       email: "x@x.com",
+      document: "123456789",
       address: "Address 1",
     });
 
@@ -50,6 +51,7 @@ describe("ClientRepository test", () => {
       id: "1",
       name: "Client 1",
       email: "x@x.com",
+      document: "123456789",
       address: "Address 1",
       createdAt: new Date(),
       updatedAt: new Date(),

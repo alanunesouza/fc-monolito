@@ -16,6 +16,9 @@ export class ClientModel extends Model {
   email: string;
 
   @Column({ allowNull: false })
+  document: string;
+
+  @Column({ allowNull: false })
   address: string;
 
   @Column({ allowNull: false })
